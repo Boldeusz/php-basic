@@ -1,0 +1,15 @@
+https://www.youtube.com/watch?v=dVEGUJhJXrY&list=PLrOp29ATDP7YBWuKh2RG_8Gg3X8iCeucH&index=5
+
+1. cd C:\xampp\htdocs\yiiproject
+2. php yii migrate/create create_media_table --fields="filename:text,filepath:text"
+3. php yii migrate/to 200521_101709
+4. open gii / controller create 
+	app\controllers\MediaController
+	index
+	modify those files
+5. open gii / model generator
+	media
+	Media
+6. in gii / form generator
+	media/upload
+	app\models\Media

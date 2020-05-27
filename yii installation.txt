@@ -1,0 +1,78 @@
+C:/xampp/htdocs
+
+composer create-project --prefer-dist yiisoft/yii2-app-basic "the name of the project"
+
+run xampp
+
+http://localhost/yiiproject/web/
+
+---------------------------------------------------
+
+Configuring the Host File in Windows
+
+C:\xampp\apache\conf\extra\httpd-vhosts.conf
+
+Add following code snippet at the end of your file:
+
+# VirtualHost for localhost.yiiproject.com
+  
+<VirtualHost *:80>
+    DocumentRoot "C:/xampp/htdocs/yiiproject/web"
+    ServerName localhost.yiiproject.com  
+    <Directory "C:/xampp/htdocs/yiiproject/">
+      Options Indexes MultiViews FollowSymLinks
+      AllowOverride All
+      Require all granted
+    </Directory>
+</VirtualHost>
+
+----------------------------------------------------------
+Plik hosts wyłączyć aviara real protection i tylko do odczytu, uruchomic jako administrator
+
+C:\Windows\System32\drivers\etc
+
+dodaj:
+
+127.0.0.1 localhost
+127.0.0.1 127.0.0.1
+127.0.0.1 localhost.yiiproject.com
+
+-------------------------------------
+composer update -- updating all dependencies(run it in command line in the root project folder)
+
+installation for the shopping cart
+
+composer require --prefer-dist omnilight/yii2-shopping-cart "*"
+
+
+
+-------------------------------------------
+
+http://localhost/index.php?r=gii
+
+------------------------------------------------
+db.php  file to work with xampp database
+
+return [
+    'class' => 'yii\db\Connection',
+    'dsn' => 'mysql:host=localhost;dbname=yii2basic;port=3307',
+    'username' => 'root',
+    'password' => '',
+    'charset' => 'utf8',
+
+------------------------------------------------------
+Language installation 
+
+first)
+
+C:\xampp\htdocs\yiiproject
+
+
+composer require codemix/yii2-localeurls
+
+composer require "kmergen/yii2-language-switcher": "*"
+
+--------------------------------
+ADVANCE
+
+https://www.youtube.com/watch?v=4HBP3AWSg5Y
